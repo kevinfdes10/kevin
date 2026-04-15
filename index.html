@@ -7,73 +7,134 @@
     <style>
         * {
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            background-color: #f0f4f8; /* Light blueish-grey background from the image */
+            background-color: #ffffff;
             margin: 0;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
         h1 {
             text-align: center;
-            color: #111827;
+            color: #000000;
             font-size: 24px;
             margin-bottom: 40px;
+            margin-top: 20px;
         }
 
-        .product-container {
+        /* Container for Products and Cart */
+        .main-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto 50px auto;
         }
 
-        .product-card {
+        /* Products Grid */
+        .products-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Generic Card Styling */
+        .card {
+            border: 1px solid #e0e0e0;
             background-color: #ffffff;
-            border-radius: 12px;
-            padding: 24px;
-            width: 240px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            padding: 20px;
+            width: 220px;
+            text-align: center;
             display: flex;
             flex-direction: column;
         }
 
-        .product-title {
+        .card h3 {
             font-size: 16px;
-            font-weight: 700;
-            color: #111827;
-            margin: 0 0 16px 0;
-            line-height: 1.4;
-            min-height: 44px; /* Keeps buttons aligned even if title is short */
+            margin: 0 0 15px 0;
+            color: #000;
         }
 
-        .product-price {
-            font-size: 18px;
-            font-weight: 700;
-            color: #2563eb; /* Blue color matching the image */
-            margin: 0 0 24px 0;
+        .card p {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0 0 20px 0;
         }
 
-        .add-to-cart-btn {
-            background-color: #2563eb;
+        /* Green Buttons */
+        .btn-green {
+            background-color: #008000;
             color: #ffffff;
             border: none;
-            border-radius: 6px;
-            padding: 10px 16px;
-            font-size: 14px;
-            font-weight: 600;
+            padding: 8px 16px;
+            font-size: 12px;
             cursor: pointer;
-            width: 100%;
-            transition: background-color 0.2s;
-            margin-top: auto; /* Pushes button to bottom of card */
+            margin-top: auto; /* Pushes button to bottom */
+            align-self: center;
         }
 
-        .add-to-cart-btn:hover {
-            background-color: #1d4ed8;
+        .btn-green:hover {
+            background-color: #006400;
+        }
+
+        /* Shopping Cart Specific */
+        .cart-card {
+            width: 250px;
+        }
+
+        .cart-card ul {
+            text-align: left;
+            font-size: 13px;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Payment Gateway Specific */
+        .payment-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .payment-box {
+            border: 2px solid #333;
+            background-color: #f2f2f2;
+            padding: 30px;
+            width: 380px;
+            text-align: center;
+        }
+
+        .payment-box h3 {
+            font-size: 16px;
+            margin-top: 0;
+        }
+
+        .payment-box input {
+            width: 60%;
+            padding: 6px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+        }
+
+        .payment-buttons {
+            margin-bottom: 20px;
+        }
+
+        .payment-buttons .btn-green {
+            margin: 0 2px;
+            padding: 8px 20px;
+        }
+
+        .helper-text {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
         }
     </style>
 </head>
@@ -81,35 +142,62 @@
 
     <h1>Premium Football Kicks Store</h1>
 
-    <div class="product-container">
-        <div class="product-card">
-            <h3 class="product-title">Nike Mercurial Superfly 10 Elite</h3>
-            <p class="product-price">₹23,795</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
+    <div class="main-container">
+        
+        <div class="products-grid">
+            <div class="card">
+                <h3>Nike Mercurial Superfly 10 Elite</h3>
+                <p>₹23795</p>
+                <button class="btn-green">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <h3>Adidas Predator Elite</h3>
+                <p>₹27999</p>
+                <button class="btn-green">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <h3>Puma Future 7 Ultimate</h3>
+                <p>₹19999</p>
+                <button class="btn-green">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <h3>Nike Tiempo Legend 10 Pro</h3>
+                <p>₹14995</p>
+                <button class="btn-green">Add to Cart</button>
+            </div>
         </div>
 
-        <div class="product-card">
-            <h3 class="product-title">Adidas Predator Elite</h3>
-            <p class="product-price">₹27,999</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
+        <div class="card cart-card">
+            <h3>Shopping Cart</h3>
+            <ul>
+                <li>Nike Mercurial - ₹23795</li>
+                <li>Adidas Predator - ₹27999</li>
+            </ul>
+            <p><strong>Total: ₹51794</strong></p>
+            <button class="btn-green">Buy Now</button>
         </div>
 
-        <div class="product-card">
-            <h3 class="product-title">Puma Future 7 Ultimate</h3>
-            <p class="product-price">₹19,999</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
-        </div>
+    </div>
 
-        <div class="product-card">
-            <h3 class="product-title">Nike Tiempo Legend 10 Pro</h3>
-            <p class="product-price">₹14,995</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
-        </div>
-
-        <div class="product-card">
-            <h3 class="product-title">Adidas X Crazyfast League</h3>
-            <p class="product-price">₹8,999</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
+    <div class="payment-container">
+        <div class="payment-box">
+            <h3>Dummy Payment Gateway</h3>
+            <p><strong>Total Amount: ₹51794</strong></p>
+            
+            <input type="text" placeholder="Enter Card Number">
+            
+            <div class="payment-buttons">
+                <button class="btn-green">Pay</button>
+                <button class="btn-green">Cancel</button>
+            </div>
+            
+            <p class="helper-text">
+                Use 1111 1111 1111 1111 &rarr; Success<br>
+                Use 2222 2222 2222 2222 &rarr; Failed
+            </p>
         </div>
     </div>
 
