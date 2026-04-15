@@ -1,1 +1,117 @@
-<p>kevin fernandes bhhcewjj</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Shoes Store</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8; /* Light blueish-grey background from the image */
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #111827;
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            width: 240px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111827;
+            margin: 0 0 16px 0;
+            line-height: 1.4;
+            min-height: 44px; /* Keeps buttons aligned even if title is short */
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2563eb; /* Blue color matching the image */
+            margin: 0 0 24px 0;
+        }
+
+        .add-to-cart-btn {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+            margin-top: auto; /* Pushes button to bottom of card */
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Premium Football Kicks Store</h1>
+
+    <div class="product-container">
+        <div class="product-card">
+            <h3 class="product-title">Nike Mercurial Superfly 10 Elite</h3>
+            <p class="product-price">₹23,795</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <h3 class="product-title">Adidas Predator Elite</h3>
+            <p class="product-price">₹27,999</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <h3 class="product-title">Puma Future 7 Ultimate</h3>
+            <p class="product-price">₹19,999</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <h3 class="product-title">Nike Tiempo Legend 10 Pro</h3>
+            <p class="product-price">₹14,995</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <h3 class="product-title">Adidas X Crazyfast League</h3>
+            <p class="product-price">₹8,999</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+
+</body>
+</html>
